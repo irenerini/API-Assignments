@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "9e2cc82b-96be-485f-ba96-5e6c6cff1f76",
+		"name": "PayPal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PayPal Chaining",
+			"item": [
+				{
+					"name": "PayPal Create Products",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0a583fed-4adf-45aa-ae24-5043757de1dc",
+								"exec": [
+									"pm.test(\"PayPal Product created successfully\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "A21AAECbsCzuB6XExufZ9xGjgK2aTA3qwex2IvgUMvc5YZd3P50QpfxPpUmzKImnz_n30nzivIu78EcGCdIc0SGTLGgmE15RQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Video Streaming Service\",\r\n  \"description\": \"Video streaming service\",\r\n  \"type\": \"SERVICE\",\r\n  \"category\": \"SOFTWARE\",\r\n  \"image_url\": \"https://example.com/streaming.jpg\",\r\n  \"home_url\": \"https://example.com/home\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serverurl}}/v1/catalogs/products",
+							"host": [
+								"{{serverurl}}"
+							],
+							"path": [
+								"v1",
+								"catalogs",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PayPal Get Products",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "138cb9f6-d5c3-441e-9764-554b5c242161",
+								"exec": [
+									"pm.test(\"PayPal Products successfully fetched.\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Verify the Content Type = json\", function () {\r",
+									"   pm.response.to.be.json;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "A21AAECbsCzuB6XExufZ9xGjgK2aTA3qwex2IvgUMvc5YZd3P50QpfxPpUmzKImnz_n30nzivIu78EcGCdIc0SGTLGgmE15RQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverurl}}/v1/catalogs/products",
+							"host": [
+								"{{serverurl}}"
+							],
+							"path": [
+								"v1",
+								"catalogs",
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
