@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "040eec46-f043-4f3c-b08b-56e28f1b342d",
+		"name": "BestBuy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Store for postal code 02864",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "Default",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "qUh3qMK14GdwAs9bO59QRSCJ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.bestbuy.com/v1/stores(area(02864,10))?format=json&show=storeId,name,address,distance&apiKey=qUh3qMK14GdwAs9bO59QRSCJ",
+					"protocol": "https",
+					"host": [
+						"api",
+						"bestbuy",
+						"com"
+					],
+					"path": [
+						"v1",
+						"stores(area(02864,10))"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "show",
+							"value": "storeId,name,address,distance"
+						},
+						{
+							"key": "apiKey",
+							"value": "qUh3qMK14GdwAs9bO59QRSCJ"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Canon (1000-1500)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.bestbuy.com/v1/products(manufacturer=canon&regularPrice>1000&regularPrice<1500)?format=json&apiKey=qUh3qMK14GdwAs9bO59QRSCJ",
+					"protocol": "https",
+					"host": [
+						"api",
+						"bestbuy",
+						"com"
+					],
+					"path": [
+						"v1",
+						"products(manufacturer=canon&regularPrice>1000&regularPrice<1500)"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "apiKey",
+							"value": "qUh3qMK14GdwAs9bO59QRSCJ"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "iPhone XR Price",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.bestbuy.com/v1/products(name=iPhone XR*&productTemplate=Cell_Phones)?show=name,regularPrice,salePrice&format=json&apiKey=qUh3qMK14GdwAs9bO59QRSCJ",
+					"protocol": "https",
+					"host": [
+						"api",
+						"bestbuy",
+						"com"
+					],
+					"path": [
+						"v1",
+						"products(name=iPhone XR*&productTemplate=Cell_Phones)"
+					],
+					"query": [
+						{
+							"key": "show",
+							"value": "name,regularPrice,salePrice"
+						},
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "apiKey",
+							"value": "qUh3qMK14GdwAs9bO59QRSCJ"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PickUp Store Availability-02886",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.bestbuy.com/v1/products/5580432/stores.json?postalCode=02886&apiKey=qUh3qMK14GdwAs9bO59QRSCJ",
+					"protocol": "https",
+					"host": [
+						"api",
+						"bestbuy",
+						"com"
+					],
+					"path": [
+						"v1",
+						"products",
+						"5580432",
+						"stores.json"
+					],
+					"query": [
+						{
+							"key": "postalCode",
+							"value": "02886"
+						},
+						{
+							"key": "apiKey",
+							"value": "qUh3qMK14GdwAs9bO59QRSCJ"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PickUp Store Availability-55109",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.bestbuy.com/v1/products/5580432/stores.json?postalCode=55109&apiKey=qUh3qMK14GdwAs9bO59QRSCJ",
+					"protocol": "https",
+					"host": [
+						"api",
+						"bestbuy",
+						"com"
+					],
+					"path": [
+						"v1",
+						"products",
+						"5580432",
+						"stores.json"
+					],
+					"query": [
+						{
+							"key": "postalCode",
+							"value": "55109"
+						},
+						{
+							"key": "apiKey",
+							"value": "qUh3qMK14GdwAs9bO59QRSCJ"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
