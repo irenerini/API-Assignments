@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "736540fe-5286-41ce-91e5-75cccaf5be6d",
+		"name": "OpenWeatherMap",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "OpenWeatherMap",
+			"item": [
+				{
+					"name": "OpenWeatherMap - Forecast",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "777be9b6-46f8-4254-9f78-2feb55517afa",
+								"exec": [
+									"\r",
+									"\r",
+									"pm.expect(pm.response.text()).to.include(pm.iterationData.get(\"name\"));\r",
+									"\r",
+									"//pm.expect(pm.response.text()).to.include(pm.iterationData.get(\"country\"));\r",
+									"\r",
+									"\r",
+									"var json = pm.response.json();\r",
+									"\r",
+									"//console.log(json.weather.length);\r",
+									"var marr = json.weather[0];\r",
+									"\r",
+									"var mval = marr.main;\r",
+									"console.log(marr.main);\r",
+									"\r",
+									"\r",
+									"var str = (marr.main.localeCompare(\"Haze\"));\r",
+									"var str1 = (marr.main.localeCompare(\"Rain\"));\r",
+									"if((str == 0 ) || (str1 == 0)){\r",
+									"  console.log(json.name);\r",
+									" }\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "05c248e1e379c2410a4cd59e22bb347f",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Default",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.openweathermap.org/data/2.5/weather?q={{name}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"openweathermap",
+								"org"
+							],
+							"path": [
+								"data",
+								"2.5",
+								"weather"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "{{name}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OpenWeatherMap - RainVolume",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://history.openweathermap.org/data/2.5/history/city?q=Chennai&type=hour&start=1591691400&end=1591722030&appid=c6dc5eb0a92741ea59e9de8311efb6a1\n",
+							"protocol": "http",
+							"host": [
+								"history",
+								"openweathermap",
+								"org"
+							],
+							"path": [
+								"data",
+								"2.5",
+								"history",
+								"city"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "Chennai"
+								},
+								{
+									"key": "type",
+									"value": "hour"
+								},
+								{
+									"key": "start",
+									"value": "1591691400"
+								},
+								{
+									"key": "end",
+									"value": "1591722030"
+								},
+								{
+									"key": "appid",
+									"value": "c6dc5eb0a92741ea59e9de8311efb6a1\n"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
