@@ -1,0 +1,265 @@
+{
+	"info": {
+		"_postman_id": "53318e25-40c3-40da-a645-643a0f3357fe",
+		"name": "Ui Bank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ui Bank Create Account",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "ZGS0MPI1okRi4bhy0a4ZFAPvEbVFxnDQxPlSrOQibfSL2lDdPphawxBUzWarj3Lz",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"accountNumber\": \"45645469\",\r\n\"friendlyName\": \"Irene\",\r\n\"type\": \"savings\",\r\n\"balance\": \"100\",\r\n\"userId\": \"5eef8c25e29f950044ba307c\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://uibank-api.azurewebsites.net/api/accounts",
+					"protocol": "https",
+					"host": [
+						"uibank-api",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Accounts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "U6nVdGxw9gOoR22HKeUtnKqhASatn0YKkJuIBzBl9pCYgBQyn2anp8v2mBD62iCZ",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"accountNumber\": \"45645466\",\r\n\"friendlyName\": \"Irene\",\r\n\"type\": \"savings\",\r\n\"balance\": \"100\",\r\n\"userId\": \"5eef8c25e29f950044ba307c\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://uibank-api.azurewebsites.net/api/accounts",
+					"protocol": "https",
+					"host": [
+						"uibank-api",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apply Loan",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "dc4k1TdnFp8CugbL9e1LBIs0wxFpEvfzikZzzUjKJvPWK4BYljZQzJl15fCfnu4e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"age\": 33,\r\n\"amount\": 40,\r\n\"email\": \"irenerini@gmail.com\",\r\n\"income\": 16000,\r\n\"term\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://uibank-api.azurewebsites.net/api/quotes/newquote",
+					"protocol": "https",
+					"host": [
+						"uibank-api",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"quotes",
+						"newquote"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Loan Status",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://uibank-api.azurewebsites.net/api/quotes/5eef93c0e29f950044ba3082",
+					"protocol": "https",
+					"host": [
+						"uibank-api",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"quotes",
+						"5eef93c0e29f950044ba3082"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Account",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"email\": \"irenerini10@gmail.com\",\r\n\"employmentStatus\": \"\",\r\n\"firstName\": \"Irene\",\r\n\"gender\": \"female\",\r\n\"maritalStatus\": \"\",\r\n\"password\": \"christ2000\",\r\n\"title\": \"mrs\",\r\n\"type\": \"customer\",\r\n\"username\": \"irenerini10@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://uibank-api.azurewebsites.net/api/users",
+					"protocol": "https",
+					"host": [
+						"uibank-api",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"username\": \"irenerini@gmail.com\", \r\n\"password\": \"christ2000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://uibank-api.azurewebsites.net/api/users/login",
+					"protocol": "https",
+					"host": [
+						"uibank-api",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAccount Specific",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "U6nVdGxw9gOoR22HKeUtnKqhASatn0YKkJuIBzBl9pCYgBQyn2anp8v2mBD62iCZ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://uibank-api.azurewebsites.net/api/accounts?filter[where][userId]=5eef8c25e29f950044ba307c",
+					"protocol": "https",
+					"host": [
+						"uibank-api",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"accounts"
+					],
+					"query": [
+						{
+							"key": "filter[where][userId]",
+							"value": "5eef8c25e29f950044ba307c"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
