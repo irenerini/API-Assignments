@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "e8880cca-b3f5-4c7e-bcea-b759ab992c30",
+		"name": "TomTom",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admin Key",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"secret\": \"secret_key\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://baseURL/geofencing/1/register?key=XOzEPkhXYG7ElG3K0GZGQmgJ68xJUuo4",
+					"protocol": "https",
+					"host": [
+						"baseURL"
+					],
+					"path": [
+						"geofencing",
+						"1",
+						"register"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "XOzEPkhXYG7ElG3K0GZGQmgJ68xJUuo4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Project",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Gardens in India\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.tomtom.com/geofencing/1/projects/project?key=XOzEPkhXYG7ElG3K0GZGQmgJ68xJUuo4&adminKey=0x6sjkBERqPls5J21SxUkU2JrdVr6EgKoPAyaFaDyhYMtWmr",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"geofencing",
+						"1",
+						"projects",
+						"project"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "XOzEPkhXYG7ElG3K0GZGQmgJ68xJUuo4"
+						},
+						{
+							"key": "adminKey",
+							"value": "0x6sjkBERqPls5J21SxUkU2JrdVr6EgKoPAyaFaDyhYMtWmr"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Projects",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.tomtom.com/geofencing/1/projects?key=XOzEPkhXYG7ElG3K0GZGQmgJ68xJUuo4",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"geofencing",
+						"1",
+						"projects"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "XOzEPkhXYG7ElG3K0GZGQmgJ68xJUuo4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Fence",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"No-fly zone 23\",\r\n  \"type\": \"Feature\",\r\n  \"geometry\": {\r\n    \"radius\": 75,\r\n    \"type\": \"Point\",\r\n    \"shapeType\": \"Circle\",\r\n    \"coordinates\": [-67.137343, 45.137451]\r\n  },\r\n  \"properties\": {\r\n    \"maxSpeedKmh\": 70\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.tomtom.com/geofencing/1/projects/86ba52e1-d76b-4904-9e46-b4ddaacb5f8f/fence?key=XOzEPkhXYG7ElG3K0GZGQmgJ68xJUuo4&adminKey=0x6sjkBERqPls5J21SxUkU2JrdVr6EgKoPAyaFaDyhYMtWmr",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"geofencing",
+						"1",
+						"projects",
+						"86ba52e1-d76b-4904-9e46-b4ddaacb5f8f",
+						"fence"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "XOzEPkhXYG7ElG3K0GZGQmgJ68xJUuo4"
+						},
+						{
+							"key": "adminKey",
+							"value": "0x6sjkBERqPls5J21SxUkU2JrdVr6EgKoPAyaFaDyhYMtWmr"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Fence details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.tomtom.com/geofencing/1/fences/a7df68d6-167d-4c25-9290-7c2d27c66d6e?key=XOzEPkhXYG7ElG3K0GZGQmgJ68xJUuo4\n",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"geofencing",
+						"1",
+						"fences",
+						"a7df68d6-167d-4c25-9290-7c2d27c66d6e"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "XOzEPkhXYG7ElG3K0GZGQmgJ68xJUuo4\n"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
